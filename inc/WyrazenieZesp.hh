@@ -10,7 +10,7 @@ using namespace std;
 /*!
  * Modeluje zbior operatorow arytmetycznych.
  */
-enum Operator { Op_Dodaj, Op_Odejmij, Op_Mnoz, Op_Dziel };
+enum Operator { Op_Dodaj, Op_Odejmij, Op_Mnoz, Op_Dziel,  Op_Modulo };
 
 
 

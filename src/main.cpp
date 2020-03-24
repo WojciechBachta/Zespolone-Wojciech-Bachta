@@ -19,19 +19,18 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
+/*
+    LZespolona A1={6,1};
+    LZespolona A2={4,2};
 
-  /*  LZespolona A1={4,5};
-    LZespolona A2={5,-6};
-
-      Wyswietl(A1+A2);
+      Wyswietl(A1%A2);
         cout << endl;
-      Wyswietl(A1-A2);
+      Wyswietl(A1%A2);
         cout << endl;
-      Wyswietl(A1*A2);
+      Wyswietl(A1%A2);
         cout << endl;
-      Wyswietl(A1/A2);
+      Wyswietl(A1%A2);
 */
-
 
   if (argc < 2) {
     cout << endl;

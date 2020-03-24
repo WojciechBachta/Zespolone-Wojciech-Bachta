@@ -15,6 +15,8 @@ ostream& operator << (ostream& wyj, const Operator& Op)
             break;
         case Op_Odejmij: wyj << "-";
             break;
+        case Op_Modulo: wyj << "%";
+            break;
     }
     return wyj;
 }
@@ -38,6 +40,8 @@ istream& operator >> (istream& wej, Operator& Op)
         case '*': Op = Op_Mnoz;
             break;
         case '-': Op = Op_Odejmij;
+            break;
+        case '%': Op = Op_Modulo;
             break;
     default: wej.setstate(std::ios::failbit);
     }
@@ -72,6 +76,8 @@ istream& operator >> (istream& wej, WyrazenieZesp& z)
         break;
     case Op_Odejmij: std::cout << "-";
         break;
+    case Op_Modulo: std::cout << "%";
+        break;
     }
      cout<<"(";
      if(z.Arg2.im<0)
@@ -94,10 +100,8 @@ istream& operator >> (istream& wej, WyrazenieZesp& z)
     case Op_Odejmij: return z.Arg1 - z.Arg2;
     case Op_Mnoz   : return z.Arg1 * z.Arg2;
     case Op_Dziel  : return z.Arg1 / z.Arg2;
+    case Op_Modulo: return z.Arg1 % z.Arg2;
  }
-
-
-
 
  }
 

@@ -12,6 +12,7 @@ LZespolona stworz(double r, double i)
     return z;
 }
 
+
 /*!
  * Realizuje dodanie dwoch liczb zespolonych.
  * Argumenty:
@@ -65,6 +66,36 @@ double Modul2(LZespolona z)
     return z.re*z.re+z.im*z.im;
 }
 
+LZespolona operator % (LZespolona x, LZespolona y)
+{
+    LZespolona wynik{0,0};
+    int pom;
+
+    if((x.re<y.re) && (x.im<y.im))
+        return x;
+    else if((x.re>y.re) && (x.im>y.im))
+    {
+        pom=(x.re/y.re);
+        wynik.re=(x.re-(pom*y.re));
+        pom=(x.im/y.im);
+        wynik.im=(x.im-(pom*y.im));
+        return wynik;
+    }
+    else if((x.re>y.re) && (x.im<y.im))
+    {
+        pom=(x.re/y.re);
+        wynik.re=(x.re-(pom*y.re));
+        wynik.im=x.im;
+    return wynik;
+    }
+    else
+    {
+        pom=(x.im/y.im);
+        wynik.im=(x.im-(pom*y.im));
+        wynik.re=x.re;
+    return wynik;
+    }
+}
 
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2)
 {

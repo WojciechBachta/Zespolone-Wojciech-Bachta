@@ -11,7 +11,7 @@ using namespace std;
  */
 static WyrazenieZesp  TestLatwy[] =
   {
-
+      {{6,3}, Op_Modulo, {4,5}},
       {{2,1}, Op_Dodaj, {1,2}},
   {{1,0}, Op_Odejmij, {0,1}},
     {{3,0}, Op_Mnoz, {0,3}},

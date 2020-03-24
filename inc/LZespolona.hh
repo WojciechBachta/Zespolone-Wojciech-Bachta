@@ -18,6 +18,8 @@ struct  LZespolona {
   double   im;    /*! Pole repezentuje czesc urojona. */
 };
 
+// void modulo(LZespolona x, LZespolona y);
+
 /*
  * Dalej powinny pojawic sie zapowiedzi definicji przeciazen operatorow
  */
@@ -30,7 +32,7 @@ ostream& operator << (ostream& wyj, const LZespolona& Z);
 LZespolona Sprzezenie(LZespolona);
 double Modul2(LZespolona);
 
-
+LZespolona operator % (LZespolona Skl1, LZespolona Skl2);
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2);
 LZespolona  operator - (LZespolona  Skl1,  LZespolona  Skl2);
 LZespolona  operator * (LZespolona  Skl1,  LZespolona  Skl2);
