@@ -23,6 +23,14 @@ static WyrazenieZesp  TestLatwy[] =
  *
  */
 
+static WyrazenieZesp  TestTrudny[] =
+ {
+      {{14,12}, Op_Modulo, {15,5}},
+      {{11,-3}, Op_Dodaj, {-5,7}},
+  {{5,-5}, Op_Odejmij, {-3,-3}},
+    {{12,6}, Op_Mnoz, {5,-3}},
+    {{4,9}, Op_Dziel, {4,-5}},
+  };
 
 
 

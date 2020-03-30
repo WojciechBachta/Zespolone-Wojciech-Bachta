@@ -7,14 +7,6 @@
 using namespace std;
 
 
-// ./a.out latwy
-// argc 2
-// argv ./a.out latwy
-// argv[1] latwy
-// argv[1][2] t
-
-
-
 
 
 int main(int argc, char **argv)
@@ -62,24 +54,44 @@ int main(int argc, char **argv)
 WyrazenieZesp   WyrZ_PytanieTestowe;
 Statystyka Staty{0,0};
 LZespolona Odp;
+    cout << "Na kazde pytanie dostepne 3 bledy skladni. Bladna odpowiedz konczy proby" << endl;
 
+  while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe))
+  {
+    cout << " Podaj wynik: " << WyrZ_PytanieTestowe;
 
-  while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe)) {
-    cout << " Podaj wynik: " << WyrZ_PytanieTestowe << "\n Twoja Odpowiedz:";
-    cin >> Odp;
+        for(int i=0; i<4; i++)
+        {
+            cout << "\n Twoja Odpowiedz:";
+            cin >> Odp;
+            if (!cin.fail())
+            {
+                break;
+            }
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Zly zapis" << endl;
 
-    if(Odp == oblicz(WyrZ_PytanieTestowe))
-    {
+        }
+        if(cin.fail())
+        {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Zly zapis" << endl;
+        }
+        else if(Odp == oblicz(WyrZ_PytanieTestowe))
+        {
         Staty.poprawne++;
         cout << "Poprawna odpowiedz \n \n";
-    }
-    else
-    {
+        }
+        else
+        {
+        Odp=oblicz(WyrZ_PytanieTestowe);
         Staty.bledne++;
-        cout << "Bledna odpowiedz \n\n";
-    }
+        cout << "Bledna odpowiedz. Poprawna odpowiedz:" << Odp << endl;
+        }
 
-
+    cout << endl;
   }
 
 
